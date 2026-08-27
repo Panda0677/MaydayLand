@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>演唱会闲置交易平台 | 低保真原型</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1 contenteditable="true">演唱会闲置交易平台 | 核心页面低保真原型</h1>
+        <p contenteditable="true">所有页面元素可双击改字，带虚线边框的模块可拖动；从右侧组件栏拖入任意手机画板可新增组件。</p>
+      </div>
+      <a class="figma-link" href="https://www.figma.com/design/kG6STRuJly3CJlZgRUP9qM" target="_blank" rel="noreferrer">Figma 空文件</a>
+    </header>
+
+    <main class="workspace">
+      <section class="board" aria-label="低保真页面画板">
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P01 首页</h2>
+          <div class="phone" data-screen="P01 首页">
+            <div class="status"></div>
+            <div class="searchbar draggable component" contenteditable="true">搜索演唱会、艺人、物品</div>
+            <div class="bell" contenteditable="true">♧</div>
+            <div class="section-head">
+              <strong contenteditable="true">近期热门演唱会</strong>
+              <span contenteditable="true">更多 &gt;</span>
+            </div>
+            <div class="event-strip">
+              <div class="event-card draggable component"><div class="ph small"></div><b contenteditable="true">五月天</b><span contenteditable="true">上海站<br />05.01</span></div>
+              <div class="event-card draggable component"><div class="ph small"></div><b contenteditable="true">周杰伦</b><span contenteditable="true">杭州站<br />05.10</span></div>
+              <div class="event-card draggable component"><div class="ph small"></div><b contenteditable="true">林俊杰</b><span contenteditable="true">北京站<br />05.16</span></div>
+              <div class="event-card draggable component"><div class="ph small"></div><b contenteditable="true">梁学友</b><span contenteditable="true">广州站<br />05.20</span></div>
+            </div>
+            <h3 contenteditable="true">为你推荐</h3>
+            <div class="tabs draggable component"><b contenteditable="true">全部</b><span contenteditable="true">闲置</span><span contenteditable="true">交换</span><span contenteditable="true">租赁</span></div>
+            <div class="grid two">
+              <div class="product-card draggable component"><i contenteditable="true">可现场面交</i><button>♡</button><div class="ph"></div><b contenteditable="true">官方荧光棒</b><strong contenteditable="true">¥89</strong></div>
+              <div class="product-card draggable component"><i contenteditable="true">可现场面交</i><button>♡</button><div class="ph"></div><b contenteditable="true">橙色应援T恤 L码</b><strong contenteditable="true">¥60</strong></div>
+            </div>
+            <nav class="bottom-nav draggable component">
+              <b contenteditable="true">首页</b><span contenteditable="true">演唱会</span><span contenteditable="true">发布</span><span contenteditable="true">消息</span><span contenteditable="true">我的</span>
+            </nav>
+          </div>
+          <p class="caption" contenteditable="true">发现演唱会与推荐商品的入口</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P03 单场 Event 页（闲置 Tab）</h2>
+          <div class="phone tall" data-screen="P03 闲置">
+            <div class="navline"><span contenteditable="true">&lt;</span><b contenteditable="true">五月天【回到那一天】上海站</b><span contenteditable="true">↗ ⋯</span></div>
+            <section class="event-hero draggable component"><div class="ph poster"></div><div><h3 contenteditable="true">五月天【回到那一天】上海站</h3><p contenteditable="true">上海体育场 | 2026.05.01 周五 19:00</p><p contenteditable="true">12.8万人想去 · 3.2万件宝贝</p></div></section>
+            <div class="info-row draggable component"><div contenteditable="true"><b>5天后演出</b><br />05.01 周五 19:00</div><div contenteditable="true"><b>现场模式未开启</b><br />演出当天开启</div><div contenteditable="true"><b>官方周边区</b><br />东广场入口</div></div>
+            <div class="notice draggable component" contenteditable="true">演出当天开启「现场模式」 查看附近正在交易的物品</div>
+            <div class="tabs draggable component"><b contenteditable="true">闲置</b><span contenteditable="true">交换</span><span contenteditable="true">租赁</span><span contenteditable="true">广场</span></div>
+            <div class="category-row draggable component"><span>全部</span><span>荧光棒</span><span>服装</span><span>周边</span><span>卡片</span><span>更多</span></div>
+            <div class="chip-row draggable component"><span contenteditable="true">默认排序⌄</span><span contenteditable="true">可现场面交 ○</span><span contenteditable="true">价格⌄</span><span contenteditable="true">筛选▽</span></div>
+            <div class="grid two">
+              <div class="product-card draggable component"><i>可现场面交</i><button>♡</button><div class="ph"></div><b contenteditable="true">官方荧光棒</b><strong contenteditable="true">¥89</strong></div>
+              <div class="product-card draggable component"><i>可现场面交</i><button>♡</button><div class="ph"></div><b contenteditable="true">橙色应援 T 恤 L码</b><strong contenteditable="true">¥60</strong></div>
+            </div>
+          </div>
+          <p class="caption" contenteditable="true">本场演唱会的闲置商品列表（默认 Tab）</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P04 商品详情页</h2>
+          <div class="phone" data-screen="P04 商品详情">
+            <div class="navline"><span>&lt;</span><b></b><span>⋯</span></div>
+            <div class="ph hero"></div><span class="counter">1/5</span>
+            <h3 contenteditable="true">官方荧光棒（几乎全新）</h3>
+            <strong class="price" contenteditable="true">¥89</strong>
+            <div class="tag-row draggable component"><span>可现场面交</span><span>包邮（快递）</span></div>
+            <dl class="meta draggable component"><dt>成色</dt><dd contenteditable="true">9成新</dd><dt>数量</dt><dd contenteditable="true">1件</dd><dt>演唱会</dt><dd contenteditable="true">五月天【回到那一天】上海站</dd></dl>
+            <div class="seller draggable component"><span class="avatar"></span><b contenteditable="true">小橘子</b><em contenteditable="true">信用良好</em><button>关注</button></div>
+            <section class="desc draggable component"><b contenteditable="true">商品描述</b><p contenteditable="true">官方正版荧光棒，演出当天使用一次，功能完好。</p></section>
+            <div class="actions draggable component"><button>聊一聊</button><button>加入收藏</button><button class="dark">立即购买</button></div>
+          </div>
+          <p class="caption" contenteditable="true">查看商品信息并进入交易流程</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P04.1 确认订单页</h2>
+          <div class="phone" data-screen="P04.1 确认订单">
+            <div class="navline"><span>&lt;</span><b contenteditable="true">确认订单</b><span></span></div>
+            <div class="order-product draggable component"><div class="ph thumb"></div><div><b contenteditable="true">官方荧光棒（几乎全新）</b><strong contenteditable="true">¥89</strong><p contenteditable="true">卖家：小橘子</p></div></div>
+            <h3 contenteditable="true">选择交付方式</h3>
+            <div class="option-list">
+              <label class="draggable component"><input type="radio" /> 快递寄送（包邮）</label>
+              <label class="draggable component"><input type="radio" /> 同城面交（上海）</label>
+              <label class="draggable component selected"><input type="radio" checked /> 演唱会现场面交<br /><small contenteditable="true">演出当天在公约地点面交</small></label>
+            </div>
+            <h3 contenteditable="true">选择面交地点</h3>
+            <div class="list compact draggable component"><p contenteditable="true">体育场东门（推荐） <b>约350m</b></p><p contenteditable="true">地铁站2号口 <b>约500m</b></p><p contenteditable="true">官方周边区 <b>约650m</b></p></div>
+            <h3 contenteditable="true">选择时间段</h3>
+            <div class="chip-row draggable component"><span>17:00 - 17:30</span><span>17:30 - 18:00</span><span>18:00 - 18:30</span></div>
+            <div class="order-bar draggable component"><b contenteditable="true">合计 ¥89</b><button class="dark">提交订单</button></div>
+          </div>
+          <p class="caption" contenteditable="true">选择演唱会现场面交的地点与时间</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P04.2 订单成功页</h2>
+          <div class="phone" data-screen="P04.2 订单成功">
+            <div class="navline"><span>&lt;</span><b></b><span></span></div>
+            <section class="success draggable component"><div class="check">✓</div><h3 contenteditable="true">下单成功</h3><b contenteditable="true">您的订单已提交</b><p contenteditable="true">请在聊天中与卖家确认面交细节</p><div><button class="dark">去聊天</button><button>查看订单</button></div></section>
+            <h3 contenteditable="true">订单信息</h3>
+            <dl class="meta order draggable component"><dt>商品</dt><dd>官方荧光棒（几乎全新）</dd><dt>金额</dt><dd>¥89</dd><dt>交付方式</dt><dd>演唱会现场面交</dd><dt>面交地点</dt><dd>体育场东门</dd><dt>时间段</dt><dd>05.01 17:30-18:00</dd></dl>
+            <div class="tip draggable component"><b contenteditable="true">提示</b><p contenteditable="true">演出当天请提前到达面交地点，注意安全，愉快观演！</p></div>
+          </div>
+          <p class="caption" contenteditable="true">下单成功，进入聊天沟通</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P03（交换 Tab）</h2>
+          <div class="phone" data-screen="P03 交换">
+            <div class="navline"><span>&lt;</span><b contenteditable="true">五月天【回到那一天】上海站</b><span></span></div>
+            <div class="tabs draggable component"><span>闲置</span><b>交换</b><span>租赁</span><span>广场</span></div>
+            <div class="searchbar draggable component" contenteditable="true">搜索我想要的周边</div>
+            <div class="chip-row draggable component"><span>全部</span><span>我有</span><span>我想要</span><span>可加价</span></div>
+            <div class="exchange-list">
+              <div class="exchange-card draggable component"><small>我有</small><b contenteditable="true">怪兽限定卡 × 1</b><em>可直接换</em><div class="ph thumb"></div><small>想要</small><b contenteditable="true">阿信限定卡 × 1</b><span>›</span></div>
+              <div class="exchange-card draggable component"><small>我有</small><b contenteditable="true">阿信限定卡 × 1</b><em>可直接换</em><div class="ph thumb"></div><small>想要</small><b contenteditable="true">怪兽限定卡 × 1 + ¥20</b><span>›</span></div>
+            </div>
+          </div>
+          <p class="caption" contenteditable="true">浏览交换帖，寻找心仪的交换</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P03.1 交换详情页</h2>
+          <div class="phone" data-screen="P03.1 交换详情">
+            <h3 contenteditable="true">我有</h3>
+            <div class="order-product draggable component"><div class="ph thumb"></div><b contenteditable="true">怪兽限定卡 × 1</b></div>
+            <h3 contenteditable="true">想要</h3>
+            <div class="order-product draggable component"><div class="ph thumb"></div><b contenteditable="true">阿信限定卡 × 1</b></div>
+            <dl class="meta draggable component"><dt>交换方式</dt><dd>演唱会现场交换</dd><dt>可加价</dt><dd>¥0</dd></dl>
+            <div class="seller draggable component"><span class="avatar"></span><b contenteditable="true">小蓝</b><em>信用良好</em></div>
+            <div class="actions draggable component"><button>聊一聊</button><button class="dark">我可以换</button></div>
+          </div>
+          <p class="caption" contenteditable="true">查看交换详情并发起交换</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P03.1.1 发起交换页</h2>
+          <div class="phone" data-screen="P03.1.1 发起交换">
+            <div class="navline"><span>&lt;</span><b contenteditable="true">发起交换</b><span></span></div>
+            <h3 contenteditable="true">选择我的交换物</h3>
+            <div class="option-list">
+              <label class="draggable component selected"><span class="ph tiny"></span> 阿信限定卡 × 1 <input type="radio" checked /></label>
+              <label class="draggable component"><span class="ph tiny"></span> 荧光棒挂件 × 1 <input type="radio" /></label>
+            </div>
+            <h3 contenteditable="true">是否加价</h3>
+            <div class="option-list"><label class="selected draggable component"><input type="radio" checked /> 不加价</label><label class="draggable component"><input type="radio" /> 加价</label></div>
+            <h3 contenteditable="true">交换方式</h3>
+            <div class="option-list"><label class="selected draggable component"><input type="radio" checked /> 演唱会现场交换（推荐）</label><label class="draggable component"><input type="radio" /> 同城交换（上海）</label><label class="draggable component"><input type="radio" /> 快递互寄</label></div>
+            <button class="full dark draggable component">发起交换换请求</button>
+          </div>
+          <p class="caption" contenteditable="true">选择我的物品并发送请求</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P05 现场模式页（演出当天）</h2>
+          <div class="phone" data-screen="P05 现场模式">
+            <div class="navline"><span>&lt;</span><b>五月天【回到那一天】上海站</b><span></span></div>
+            <div class="live-banner draggable component" contenteditable="true">现场模式已开启<br />326位乐迷正在现场交易</div>
+            <h3 contenteditable="true">附近物品（按距离）</h3>
+            <div class="near-list">
+              <div class="near-item draggable component"><div class="ph thumb"></div><b contenteditable="true">橙色应援T恤 L码</b><strong>¥60</strong><p>约250m | 18:00前可面交</p></div>
+              <div class="near-item draggable component"><div class="ph thumb"></div><b contenteditable="true">官方荧光棒</b><strong>¥80</strong><p>约300m | 18:30前可面交</p></div>
+              <div class="near-item draggable component"><div class="ph thumb"></div><b contenteditable="true">周边手幅</b><strong>¥15</strong><p>约450m | 19:00前可面交</p></div>
+            </div>
+          </div>
+          <p class="caption" contenteditable="true">演出当天浏览附近可面交的物品</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P05.1 现场商品详情页</h2>
+          <div class="phone" data-screen="P05.1 现场商品详情">
+            <div class="navline"><span>&lt;</span><b></b><span>⋯</span></div>
+            <div class="ph hero"></div><span class="counter">1/4</span>
+            <h3 contenteditable="true">橙色应援T恤 L码</h3><strong class="price">¥60</strong>
+            <p contenteditable="true">约250m | 体育场东门</p>
+            <div class="tag-row draggable component"><span>演出当天可面交</span><span>个人出租出售</span></div>
+            <div class="seller draggable component"><span class="avatar"></span><b contenteditable="true">卖家</b><em>奶茶妹妹</em></div>
+            <section class="desc draggable component"><b>商品描述</b><p contenteditable="true">只穿过一次，成色很好，支持现场验货。</p></section>
+            <div class="actions draggable component"><button>现在联系</button><button class="dark">我想要</button></div>
+          </div>
+          <p class="caption" contenteditable="true">查看现场物品并联系卖家</p>
+        </article>
+
+        <article class="screen-wrap">
+          <h2 contenteditable="true">P06 发布入口页</h2>
+          <div class="phone" data-screen="P06 发布入口">
+            <div class="navline"><span>&lt;</span><b contenteditable="true">发布</b><span></span></div>
+            <p contenteditable="true">选择你要发布的类型</p>
+            <div class="publish-types">
+              <div class="publish-card draggable component"><span>□</span><b contenteditable="true">出售闲置</b><p contenteditable="true">卖掉不用的物品</p><i>›</i></div>
+              <div class="publish-card draggable component"><span>✣</span><b contenteditable="true">交换周边</b><p contenteditable="true">我有 / 我想要</p><i>›</i></div>
+              <div class="publish-card draggable component"><span>▤</span><b contenteditable="true">租赁物品</b><p contenteditable="true">短期出租 / 借用</p><i>›</i></div>
+            </div>
+          </div>
+          <p class="caption" contenteditable="true">全局发布入口，选择发布类型</p>
+        </article>
+      </section>
+
+      <aside class="palette" aria-label="可拖拽组件库">
+        <h2>组件库</h2>
+        <p>拖到任意手机画板中新增组件</p>
+        <div class="palette-item" draggable="true" data-template="product">商品卡</div>
+        <div class="palette-item" draggable="true" data-template="list">列表项</div>
+        <div class="palette-item" draggable="true" data-template="chips">筛选胶囊</div>
+        <div class="palette-item" draggable="true" data-template="option">单选选项</div>
+        <div class="palette-item" draggable="true" data-template="button">按钮组</div>
+        <div class="palette-item" draggable="true" data-template="notice">提示条</div>
+      </aside>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

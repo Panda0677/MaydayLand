@@ -1,0 +1,7 @@
+{
+  "name": "演唱会低保真页面导入器",
+  "id": "concert-lowfi-wireframe-importer",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"]
+}
