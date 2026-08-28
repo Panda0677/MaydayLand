@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
   title: "Encore｜演唱会闲置交易",
   description: "围绕演唱会 Event 的闲置出售、交换、租赁与现场交易社区。",
   icons: {
-    icon: "/icon.svg",
+    icon: `${basePath}/icon.svg`,
   },
 };
 

@@ -11,6 +11,7 @@ import { SecondaryActionButton } from "@/components/ui/SecondaryActionButton";
 import { getEvent } from "@/data/events";
 import { getProduct } from "@/data/products";
 import { deliveryText } from "@/lib/utils";
+import { productStaticParams } from "@/lib/staticParams";
 
 const mediaTone: Record<string, "glowstick" | "shirt" | "bag" | "poster"> = {
   "orange-glow": "glowstick",
@@ -36,6 +37,10 @@ function fallbackLabel(category: string) {
 type ProductPageProps = {
   params: { id: string };
 };
+
+export function generateStaticParams() {
+  return productStaticParams();
+}
 
 export default function ProductPage({ params }: ProductPageProps) {
   const { id } = params;

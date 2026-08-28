@@ -10,10 +10,15 @@ import { SecondaryActionButton } from "@/components/ui/SecondaryActionButton";
 import { getEvent } from "@/data/events";
 import { formatExchangeItems, getExchange } from "@/data/exchanges";
 import { formatEventShortDate, swapDeliveryText } from "@/lib/utils";
+import { exchangeStaticParams } from "@/lib/staticParams";
 
 type ExchangeDetailPageProps = {
   params: { id: string };
 };
+
+export function generateStaticParams() {
+  return exchangeStaticParams();
+}
 
 export default function ExchangeDetailPage({ params }: ExchangeDetailPageProps) {
   const exchange = getExchange(params.id);

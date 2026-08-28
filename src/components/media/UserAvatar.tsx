@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { getUserByName } from "@/data/users";
+import { assetPath } from "@/lib/assetPath";
 
 type UserAvatarProps = {
   name: string;
@@ -21,7 +22,7 @@ export function UserAvatar({ name, className, imageClassName, sizes = "44px" }: 
           className={cn("select-none object-cover", imageClassName)}
           fill
           sizes={sizes}
-          src={user.avatar}
+          src={assetPath(user.avatar)}
         />
       </div>
     );

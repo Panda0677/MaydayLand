@@ -7,10 +7,15 @@ import { SecondaryButton } from "@/components/ui/SecondaryButton";
 import { getEvent } from "@/data/events";
 import { getLiveListing, liveDistanceText, liveListingPriceText } from "@/data/liveListings";
 import { formatEventShortDate } from "@/lib/utils";
+import { liveRentalStaticParams } from "@/lib/staticParams";
 
 type LiveRentalPageProps = {
   params: { id: string };
 };
+
+export function generateStaticParams() {
+  return liveRentalStaticParams();
+}
 
 export default function LiveRentalPage({ params }: LiveRentalPageProps) {
   const listing = getLiveListing(params.id);

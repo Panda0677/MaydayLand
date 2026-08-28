@@ -10,10 +10,15 @@ import { getEvent } from "@/data/events";
 import { getLiveListing, liveDistanceText } from "@/data/liveListings";
 import { getProduct } from "@/data/products";
 import { formatEventShortDate } from "@/lib/utils";
+import { productStaticParams } from "@/lib/staticParams";
 
 type LiveProductPageProps = {
   params: { id: string };
 };
+
+export function generateStaticParams() {
+  return productStaticParams();
+}
 
 export default function LiveProductPage({ params }: LiveProductPageProps) {
   const product = getProduct(params.id);

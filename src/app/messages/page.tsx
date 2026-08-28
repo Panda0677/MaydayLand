@@ -233,9 +233,9 @@ function MessagesContent() {
                   </p>
                 </div>
               </div>
-              <a className="shrink-0 text-xs font-bold text-brand" href={orderUrl}>
+              <Link className="shrink-0 text-xs font-bold text-brand" href={orderUrl}>
                 查看订单 &gt;
-              </a>
+              </Link>
             </div>
           </section>
           <div className="flex-1 space-y-3">
@@ -297,9 +297,9 @@ function MessagesContent() {
             });
 
             return (
-              <a className="card flex w-full min-w-0 items-start gap-3 p-4" href={`/messages?${params.toString()}`} key={thread.id}>
+              <Link className="card flex w-full min-w-0 items-start gap-3 p-4" href={`/messages?${params.toString()}`} key={thread.id}>
                 {content}
-              </a>
+              </Link>
             );
           })}
         </div>

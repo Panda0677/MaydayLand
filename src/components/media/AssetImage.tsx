@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { useState } from "react";
 import { MediaPlaceholder } from "@/components/media/MediaPlaceholder";
+import { assetPath } from "@/lib/assetPath";
 import { cn } from "@/lib/utils";
 
 type AssetImageProps = {
@@ -51,7 +52,7 @@ export function AssetImage({
         fill
         priority={priority}
         sizes={sizes}
-        src={src}
+        src={assetPath(src)}
         style={{ objectFit, objectPosition }}
         onError={() => setFailed(true)}
       />
