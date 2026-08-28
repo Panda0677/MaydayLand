@@ -21,28 +21,28 @@ export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-40 mx-auto grid h-[72px] w-full max-w-[390px] grid-cols-5 border-t border-line bg-white px-2 pb-2 pt-1 shadow-[0_-4px_12px_rgba(23,23,23,0.03)]">
+    <nav className="fixed inset-x-0 bottom-0 z-40 mx-auto grid h-[72px] w-full max-w-[390px] grid-cols-5 border-t border-line bg-white px-2 pb-2.5 pt-2 shadow-[0_-4px_12px_rgba(23,23,23,0.03)]">
       {tabs.map((tab) => {
         const Icon = tab.icon;
         const active = tab.match(pathname);
         return (
           <Link
             className={cn(
-              "flex h-full flex-col items-center justify-start gap-0.5 rounded-2xl pt-1.5 text-[11px] font-semibold outline-none transition focus-visible:ring-2 focus-visible:ring-brand/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+              "flex h-full flex-col items-center justify-start gap-1.5 rounded-2xl text-[11px] font-semibold outline-none transition focus-visible:ring-2 focus-visible:ring-brand/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
             )}
             href={tab.href}
             key={tab.label}
             aria-current={active ? "page" : undefined}
           >
-            <span className="grid h-11 w-full place-items-center">
+            <span className="grid h-9 w-full place-items-center">
               <span
                 className={cn(
                   "grid place-items-center rounded-full transition-colors",
-                  tab.center ? "h-10 w-10 -translate-y-0.5 bg-brand text-white shadow-soft" : "h-8 w-8",
+                  tab.center ? "h-[38px] w-[38px] -translate-y-0.5 bg-brand text-white shadow-soft" : "h-8 w-8",
                   !tab.center && (active ? "text-brand" : "text-muted"),
                 )}
               >
-                <Icon size={tab.center ? 22 : 20} strokeWidth={2.2} />
+                <Icon size={22} strokeWidth={2.2} />
               </span>
             </span>
             <span className={cn("leading-none transition-colors", active ? "text-brand" : "text-muted")}>{tab.label}</span>

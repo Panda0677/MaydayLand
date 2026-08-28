@@ -17,7 +17,7 @@ export function SecondaryActionButton({ href, icon: Icon, children, className, .
   );
   const content = (
     <>
-      <Icon className="h-4 w-4 shrink-0" strokeWidth={2} />
+      <Icon className="h-[18px] w-[18px] shrink-0" strokeWidth={2} />
       <span className="whitespace-nowrap">{children}</span>
     </>
   );

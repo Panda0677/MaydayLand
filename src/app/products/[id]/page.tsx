@@ -8,7 +8,6 @@ import { AssetImage } from "@/components/media/AssetImage";
 import { MediaPlaceholder } from "@/components/media/MediaPlaceholder";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { SecondaryActionButton } from "@/components/ui/SecondaryActionButton";
-import { SecondaryButton } from "@/components/ui/SecondaryButton";
 import { getEvent } from "@/data/events";
 import { getProduct } from "@/data/products";
 import { deliveryText } from "@/lib/utils";
@@ -115,10 +114,9 @@ export default function ProductPage({ params }: ProductPageProps) {
         <SecondaryActionButton href={`/messages?${chatParams.toString()}`} icon={MessageCircle}>
           聊一聊
         </SecondaryActionButton>
-        <SecondaryButton className="h-12 w-[78px] whitespace-nowrap px-3 text-xs">
-          <Heart size={16} />
+        <SecondaryActionButton icon={Heart}>
           收藏
-        </SecondaryButton>
+        </SecondaryActionButton>
         <PrimaryButton className="h-12 flex-1" href={`/checkout/${product.id}`}>
           立即购买
         </PrimaryButton>
