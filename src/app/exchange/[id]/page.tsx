@@ -5,7 +5,7 @@ import { AppShell } from "@/components/layout/AppShell";
 import { TopHeader } from "@/components/layout/TopHeader";
 import { AssetImage } from "@/components/media/AssetImage";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
-import { SecondaryButton } from "@/components/ui/SecondaryButton";
+import { SecondaryActionButton } from "@/components/ui/SecondaryActionButton";
 import { getEvent } from "@/data/events";
 import { formatExchangeItems, getExchange } from "@/data/exchanges";
 import { formatEventShortDate, swapDeliveryText } from "@/lib/utils";
@@ -121,10 +121,9 @@ export default function ExchangeDetailPage({ params }: ExchangeDetailPageProps) 
       </div>
 
       <div className="fixed inset-x-0 bottom-0 z-30 mx-auto flex max-w-[390px] items-center gap-2 border-t border-line bg-white p-3">
-        <SecondaryButton className="h-12 min-w-[108px] flex-none whitespace-nowrap px-3 text-xs" href={`/messages?${chatParams.toString()}`}>
-          <MessageCircle className="shrink-0" size={16} />
+        <SecondaryActionButton href={`/messages?${chatParams.toString()}`} icon={MessageCircle}>
           聊一聊
-        </SecondaryButton>
+        </SecondaryActionButton>
         <PrimaryButton className="h-12 flex-1" href={`/exchange/${exchange.id}/request`}>
           我可以换
         </PrimaryButton>

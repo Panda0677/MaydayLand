@@ -40,7 +40,7 @@ export function EventHeader({ event }: EventHeaderProps) {
           </p>
         </div>
         <p className="mt-3 text-sm font-semibold text-ink">
-          {formatCompactWan(event.attendeeCount ?? event.heat)} 人关注 · {formatCompactWan(event.itemCount)} 件闲置
+          {formatCompactWan(event.heat)} 人关注 · {formatCompactWan(event.itemCount)} 件闲置
         </p>
       </div>
     </section>

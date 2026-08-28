@@ -55,7 +55,7 @@ export function ProductCard({ product }: ProductCardProps) {
       </span>
     </AssetImage>
   ) : (
-    <MediaPlaceholder className="h-32" label={productFallbackLabel(product)} tone={fallbackTone}>
+    <MediaPlaceholder className="h-auto w-full" label={productFallbackLabel(product)} tone={fallbackTone}>
       {canMeet && (
         <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2 py-1 text-[10px] font-bold text-brand">
           {deliveryText("concert_meetup")}

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { AppShell } from "@/components/layout/AppShell";
 import { TopHeader } from "@/components/layout/TopHeader";
@@ -43,7 +44,7 @@ export default function SwapSuccessPage({ params, searchParams }: SwapSuccessPag
           <p className="mt-2 text-sm leading-6 text-muted">对方接受后，可在聊天中确认现场交换细节</p>
           <div className="mt-5 grid w-full grid-cols-2 gap-2">
             <PrimaryButton href={`/messages?${chatParams.toString()}`}>去聊天</PrimaryButton>
-            <SecondaryButton href={`/events/${event.id}?tab=swap`}>返回交换列表</SecondaryButton>
+            <SecondaryButton href={`/events/${event.id}?tab=swap`}>查看交换列表</SecondaryButton>
           </div>
         </section>
 
@@ -66,6 +67,10 @@ export default function SwapSuccessPage({ params, searchParams }: SwapSuccessPag
             </dd>
           </dl>
         </section>
+
+        <Link className="block text-center text-sm font-bold text-brand" href="/">
+          返回首页
+        </Link>
       </div>
     </AppShell>
   );

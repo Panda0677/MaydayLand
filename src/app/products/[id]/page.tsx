@@ -7,6 +7,7 @@ import { SellerCard } from "@/components/commerce/SellerCard";
 import { AssetImage } from "@/components/media/AssetImage";
 import { MediaPlaceholder } from "@/components/media/MediaPlaceholder";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
+import { SecondaryActionButton } from "@/components/ui/SecondaryActionButton";
 import { SecondaryButton } from "@/components/ui/SecondaryButton";
 import { getEvent } from "@/data/events";
 import { getProduct } from "@/data/products";
@@ -70,7 +71,7 @@ export default function ProductPage({ params }: ProductPageProps) {
             <span className="absolute bottom-3 right-3 rounded-full bg-black/55 px-2.5 py-1 text-xs font-bold text-white">1/3</span>
           </AssetImage>
         ) : (
-          <MediaPlaceholder className="relative h-56" label={fallbackLabel(product.category)} tone={mediaTone[product.image] ?? "default"}>
+          <MediaPlaceholder className="relative h-auto w-full" label={fallbackLabel(product.category)} tone={mediaTone[product.image] ?? "default"}>
             <span className="absolute bottom-3 right-3 rounded-full bg-black/55 px-2.5 py-1 text-xs font-bold text-white">1/3</span>
           </MediaPlaceholder>
         )}
@@ -111,10 +112,9 @@ export default function ProductPage({ params }: ProductPageProps) {
       </div>
 
       <div className="fixed inset-x-0 bottom-0 z-30 mx-auto flex max-w-[390px] items-center gap-2 border-t border-line bg-white p-3">
-        <SecondaryButton className="h-12 w-[92px] whitespace-nowrap px-3 text-xs" href={`/messages?${chatParams.toString()}`}>
-          <MessageCircle size={16} />
+        <SecondaryActionButton href={`/messages?${chatParams.toString()}`} icon={MessageCircle}>
           聊一聊
-        </SecondaryButton>
+        </SecondaryActionButton>
         <SecondaryButton className="h-12 w-[78px] whitespace-nowrap px-3 text-xs">
           <Heart size={16} />
           收藏

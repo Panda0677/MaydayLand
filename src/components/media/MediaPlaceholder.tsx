@@ -13,13 +13,13 @@ type MediaPlaceholderProps = {
 
 const toneClass: Record<MediaTone, string> = {
   concert: "bg-[radial-gradient(circle_at_24%_24%,rgba(255,255,255,.7)_0_14%,transparent_15%),linear-gradient(135deg,#2b211d,#ff7a21)] text-white",
-  glowstick: "bg-[radial-gradient(circle_at_50%_32%,#fff7ed_0_15%,transparent_16%),linear-gradient(145deg,#ffe0c4,#ff8a34)] text-brand",
-  shirt: "bg-[linear-gradient(135deg,#ffe6d3,#f97316)] text-white",
-  bag: "bg-[linear-gradient(135deg,#f8fafc,#fdba74)] text-brand",
-  poster: "bg-[linear-gradient(135deg,#e5e7eb,#f97316)] text-white",
-  card: "bg-[linear-gradient(135deg,#fff7ed,#dbeafe)] text-brand",
+  glowstick: "bg-[#fff4ec] text-brand",
+  shirt: "bg-[#fff1e7] text-brand",
+  bag: "bg-[#f7eee6] text-brand",
+  poster: "bg-[#f2eee9] text-brand",
+  card: "bg-[#fff4ec] text-brand",
   community: "bg-[linear-gradient(135deg,#fff7ed,#f8fafc)] text-brand",
-  default: "bg-orange-50 text-brand",
+  default: "bg-[#f7eee6] text-brand",
 };
 
 const iconMap: Record<MediaTone, typeof ImageIcon> = {
@@ -37,10 +37,10 @@ export function MediaPlaceholder({ label, tone = "default", className, children 
   const Icon = iconMap[tone];
 
   return (
-    <div className={cn("relative grid place-items-center overflow-hidden", toneClass[tone], className)}>
-      <div className="grid place-items-center gap-2 text-center">
+    <div className={cn("relative aspect-square grid place-items-center overflow-hidden", toneClass[tone], className)}>
+      <div className="grid max-w-full place-items-center gap-2 px-3 text-center">
         <Icon size={24} strokeWidth={2.1} />
-        <span className="max-w-[88%] text-xs font-black leading-4">{label}</span>
+        <span className="max-w-full whitespace-nowrap text-xs font-bold leading-4 text-current">{label}</span>
       </div>
       {children}
     </div>
