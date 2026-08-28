@@ -13,7 +13,7 @@ export function EventHeader({ event }: EventHeaderProps) {
     <section className="card overflow-hidden">
       {event.coverImage ? (
         <AssetImage
-          alt="五月天上海站演唱会视觉"
+          alt={`${event.artist}${event.city}站演唱会视觉`}
           className="h-40 bg-white"
           fallbackLabel={`${event.artist} ${event.city}站`}
           fallbackTone="concert"

@@ -1,5 +1,11 @@
 export type EventPhase = "preheat" | "live" | "afterglow" | "history";
 
+export type User = {
+  id: string;
+  name: string;
+  avatar?: string;
+};
+
 export type ConcertEvent = {
   id: string;
   artist: string;

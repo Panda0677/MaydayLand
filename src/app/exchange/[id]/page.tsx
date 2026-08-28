@@ -4,6 +4,7 @@ import { ArrowRightLeft, CheckCircle2, MessageCircle } from "lucide-react";
 import { AppShell } from "@/components/layout/AppShell";
 import { TopHeader } from "@/components/layout/TopHeader";
 import { AssetImage } from "@/components/media/AssetImage";
+import { UserAvatar } from "@/components/media/UserAvatar";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { SecondaryActionButton } from "@/components/ui/SecondaryActionButton";
 import { getEvent } from "@/data/events";
@@ -109,9 +110,7 @@ export default function ExchangeDetailPage({ params }: ExchangeDetailPageProps) 
         <section className="card p-4">
           <h2 className="text-base font-black text-ink">用户</h2>
           <div className="mt-3 flex items-center gap-3">
-            <div className="grid h-11 w-11 place-items-center rounded-full bg-orange-100 text-sm font-black text-brand">
-              {exchange.ownerName.slice(0, 1)}
-            </div>
+            <UserAvatar className="h-11 w-11" name={exchange.ownerName} />
             <div>
               <p className="font-bold text-ink">{exchange.ownerName}</p>
               <p className="mt-1 text-xs text-muted">{exchange.ownerCredit}</p>

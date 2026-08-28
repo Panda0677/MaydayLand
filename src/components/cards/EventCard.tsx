@@ -13,7 +13,7 @@ type EventCardProps = {
 export function EventCard({ event, compact = false }: EventCardProps) {
   const cover = event.coverImage ? (
     <AssetImage
-      alt="五月天上海站演唱会视觉"
+      alt={`${event.artist}${event.city}站演唱会视觉`}
       className="h-24 bg-white"
       fallbackLabel={`${event.artist} ${event.city}`}
       fallbackTone="concert"

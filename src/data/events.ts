@@ -25,6 +25,7 @@ export const events: ConcertEvent[] = [
     phase: "preheat",
     heat: 746000,
     itemCount: 18000,
+    coverImage: "/assets/concerts/jay-hangzhou.jpg",
   },
   {
     id: "jjlin-beijing-20261018",
@@ -36,6 +37,7 @@ export const events: ConcertEvent[] = [
     phase: "preheat",
     heat: 612000,
     itemCount: 14600,
+    coverImage: "/assets/concerts/jj-beijing.jpg",
   },
 ];
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRightLeft, HandCoins, MessageCircle, Package, Timer } from "lucide-react";
 import { AssetImage } from "@/components/media/AssetImage";
+import { UserAvatar } from "@/components/media/UserAvatar";
 import type { LiveListing } from "@/types";
 import { formatExchangeItems, getExchange } from "@/data/exchanges";
 import { liveDistanceText, liveListingPriceText, liveListingTypeText } from "@/data/liveListings";
@@ -86,7 +87,12 @@ export function LiveListingCard({ listing }: LiveListingCardProps) {
             {liveDistanceText(listing.distanceMeters)} · {listing.meetupPoint}
           </p>
           <p className="mt-1 text-xs font-semibold text-muted">{listing.availableUntil}</p>
-          {listing.sellerName ? <p className="mt-2 text-xs text-muted">发布者：{listing.sellerName}</p> : null}
+          {listing.sellerName ? (
+            <div className="mt-2 flex items-center gap-2 text-xs text-muted">
+              <UserAvatar className="h-6 w-6 text-[10px]" name={listing.sellerName} sizes="24px" />
+              <span>发布者：{listing.sellerName}</span>
+            </div>
+          ) : null}
         </div>
         {listing.imagePath ? (
           <AssetImage

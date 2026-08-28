@@ -1,4 +1,5 @@
 import { ShieldCheck } from "lucide-react";
+import { UserAvatar } from "@/components/media/UserAvatar";
 import type { Product } from "@/types";
 
 type SellerCardProps = {
@@ -8,9 +9,7 @@ type SellerCardProps = {
 export function SellerCard({ product }: SellerCardProps) {
   return (
     <section className="card flex items-center gap-3 p-4">
-      <div className="grid h-11 w-11 place-items-center rounded-full bg-orange-100 text-sm font-black text-brand">
-        {product.sellerName.slice(0, 1)}
-      </div>
+      <UserAvatar className="h-11 w-11" name={product.sellerName} />
       <div className="min-w-0 flex-1">
         <p className="font-bold text-ink">{product.sellerName}</p>
         <p className="mt-1 flex items-center gap-1 text-xs text-muted">

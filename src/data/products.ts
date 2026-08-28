@@ -51,6 +51,7 @@ export const products: Product[] = [
     sellerCredit: "信用优秀",
     description: "全新未拆，适合装荧光棒和小周边。",
     image: "bag",
+    imagePath: "/assets/products/glowstick-bag.jpg",
     delivery: ["shipping", "concert_meetup"],
   },
   {
@@ -65,6 +66,7 @@ export const products: Product[] = [
     sellerCredit: "信用良好",
     description: "收藏海报一张，边角有轻微卷边，只支持快递。",
     image: "poster",
+    imagePath: "/assets/products/mayday-poster.jpg",
     delivery: ["shipping"],
   },
 ];

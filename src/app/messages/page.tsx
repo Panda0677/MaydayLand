@@ -3,8 +3,9 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowRightLeft, Bell, Send, Timer } from "lucide-react";
+import { Bell, Send } from "lucide-react";
 import { AppShell } from "@/components/layout/AppShell";
+import { UserAvatar } from "@/components/media/UserAvatar";
 import { TopHeader } from "@/components/layout/TopHeader";
 import { getEvent } from "@/data/events";
 import { formatExchangeItems, getExchange } from "@/data/exchanges";
@@ -82,7 +83,10 @@ function MessagesContent() {
         <TopHeader title={activeThread.title} showBack />
         <div className="flex min-h-[calc(100dvh-52px)] flex-col p-4">
           <section className="card mb-4 border-green-100 bg-green-50 p-3">
-            <p className="text-sm font-black text-green-800">现场交易</p>
+            <div className="flex items-center gap-2">
+              <UserAvatar className="h-9 w-9 text-xs" name={activeThread.title} sizes="36px" />
+              <p className="text-sm font-black text-green-800">现场交易</p>
+            </div>
             <div className="mt-2 grid gap-1 text-xs font-semibold text-green-700">
               <p className="text-ink">
                 {liveListing.title} {livePrice}
@@ -122,9 +126,7 @@ function MessagesContent() {
         <div className="flex min-h-[calc(100dvh-52px)] flex-col p-4">
           <section className="card mb-4 p-3">
             <div className="flex items-start gap-3">
-              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-orange-100 text-brand">
-                <Timer size={18} />
-              </div>
+              <UserAvatar className="h-9 w-9 text-xs" name={rental.ownerName} sizes="36px" />
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-black text-ink">租赁</p>
                 <div className="mt-2 grid gap-1 text-xs font-semibold text-muted">
@@ -165,9 +167,7 @@ function MessagesContent() {
         <div className="flex min-h-[calc(100dvh-52px)] flex-col p-4">
           <section className="card mb-4 p-3">
             <div className="flex items-start gap-3">
-              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-orange-100 text-brand">
-                <ArrowRightLeft size={18} />
-              </div>
+              <UserAvatar className="h-9 w-9 text-xs" name={exchange.ownerName} sizes="36px" />
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-sm font-black text-ink">交换请求</p>
@@ -219,16 +219,19 @@ function MessagesContent() {
         <div className="flex min-h-[calc(100dvh-52px)] flex-col p-4">
           <section className="card mb-4 p-3">
             <div className="flex items-start justify-between gap-3">
-              <div className="min-w-0">
-                <p className="truncate text-sm font-black text-ink">
-                  {product?.title ?? "橙色应援 T 恤 L 码"} <span className="text-brand">¥{product?.price ?? 60}</span>
-                </p>
-                <p className="mt-1 text-xs font-semibold text-muted">
-                  {event ? `${event.artist}${event.city}站 · ${eventMonthDay}` : "五月天上海站 · 09.12"}
-                </p>
-                <p className="mt-1 text-xs font-semibold text-muted">
-                  {point} · {time}
-                </p>
+              <div className="flex min-w-0 items-start gap-3">
+                <UserAvatar className="h-9 w-9 text-xs" name={product?.sellerName ?? activeThread.title} sizes="36px" />
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-black text-ink">
+                    {product?.title ?? "橙色应援 T 恤 L 码"} <span className="text-brand">¥{product?.price ?? 60}</span>
+                  </p>
+                  <p className="mt-1 text-xs font-semibold text-muted">
+                    {event ? `${event.artist}${event.city}站 · ${eventMonthDay}` : "五月天上海站 · 09.12"}
+                  </p>
+                  <p className="mt-1 text-xs font-semibold text-muted">
+                    {point} · {time}
+                  </p>
+                </div>
               </div>
               <a className="shrink-0 text-xs font-bold text-brand" href={orderUrl}>
                 查看订单 &gt;
@@ -263,11 +266,11 @@ function MessagesContent() {
       <div className="w-full px-4 pb-[92px] pt-3">
         <div className="grid w-full gap-3">
           {messageThreads.map((thread) => {
+            const threadExchange = thread.exchangeId ? getExchange(thread.exchangeId) : undefined;
+            const avatarName = thread.kind === "swap" && threadExchange ? threadExchange.ownerName : thread.title;
             const content = (
               <>
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-orange-100 text-sm font-black text-brand">
-                  {thread.title.slice(0, 1)}
-                </div>
+                <UserAvatar className="h-11 w-11" name={avatarName} />
                 <div className="min-w-0 flex-1">
                   <div className="flex min-w-0 items-center justify-between gap-3">
                     <p className="min-w-0 truncate font-bold text-ink">{thread.title}</p>

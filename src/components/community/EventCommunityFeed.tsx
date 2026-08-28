@@ -8,6 +8,7 @@ import { getProduct } from "@/data/products";
 import { cn } from "@/lib/utils";
 import type { CommunityPost } from "@/types";
 import { AssetImage } from "@/components/media/AssetImage";
+import { UserAvatar } from "@/components/media/UserAvatar";
 import { FilterChip } from "@/components/ui/FilterChip";
 
 const filters: Array<"全部" | CommunityPost["type"]> = ["全部", "晒物", "穿搭", "找搭子", "攻略", "现场"];
@@ -40,6 +41,7 @@ export function EventCommunityFeed({ eventId }: EventCommunityFeedProps) {
           return (
             <article className="card w-full p-4" key={post.id}>
               <div className="flex items-center gap-2">
+                <UserAvatar className="h-8 w-8 text-xs" name={post.authorName} sizes="32px" />
                 <span className="rounded-full bg-orange-50 px-2 py-1 text-[11px] font-black text-brand">{post.type}</span>
                 <span className="text-xs font-semibold text-muted">{post.authorName}</span>
               </div>

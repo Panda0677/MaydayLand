@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRightLeft } from "lucide-react";
 import { AssetImage } from "@/components/media/AssetImage";
+import { UserAvatar } from "@/components/media/UserAvatar";
 import type { ExchangePost } from "@/types";
 import { swapDeliveryText } from "@/lib/utils";
 import { formatExchangeItems } from "@/data/exchanges";
@@ -61,9 +62,12 @@ export function ExchangeCard({ exchange }: ExchangeCardProps) {
       </div>
 
       <div className="mt-4 flex items-center justify-between gap-3 border-t border-line pt-3">
-        <div className="min-w-0">
-          <p className="truncate text-sm font-bold text-ink">用户：{exchange.ownerName}</p>
-          <p className="mt-0.5 text-xs text-muted">{exchange.ownerCredit}</p>
+        <div className="flex min-w-0 items-center gap-2">
+          <UserAvatar className="h-8 w-8 text-xs" name={exchange.ownerName} sizes="32px" />
+          <div className="min-w-0">
+            <p className="truncate text-sm font-bold text-ink">用户：{exchange.ownerName}</p>
+            <p className="mt-0.5 text-xs text-muted">{exchange.ownerCredit}</p>
+          </div>
         </div>
         <Link className="shrink-0 text-sm font-bold text-brand" href={`/exchange/${exchange.id}`}>
           查看交换 &gt;
